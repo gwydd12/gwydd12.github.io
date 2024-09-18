@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="http://gwydd.se/"><img src="https://raw.githubusercontent.com/gwydd12/gwydd.se/main/images/gwydd-mascott.png" alt="Gwydd Mascott" width="200"></a>
+  <a href="http://gwydd.se/"><img src="/images/gwydd-mascott.png" alt="Gwydd Mascott" width="200"></a>
   <br>
   Gwydd's Blog
   <br>

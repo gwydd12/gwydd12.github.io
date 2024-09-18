@@ -1,0 +1,8 @@
+.stack-work/
+stack.yaml.lock
+_cache
+_site
+auto/
+dist-newstyle
+.direnv
+result

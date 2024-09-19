@@ -1,56 +1,103 @@
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; background-color: #fbf1c7; color: #3c3836; padding: 10px; border-radius: 5px; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; background-color: #fbf1c7; color: #3c3836; }
-pre.sourceCode { margin: 0; }
+/* General styling for source code */
+.sourceCode {
+  overflow: visible;
+  background-color: var(--bg1); /* Slightly darker than the background in the image */
+  color: var(--fg1); /* Use slightly lighter foreground for better contrast */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+code.sourceCode {
+  white-space: pre;
+  position: relative;
+}
+
+div.sourceCode {
+  margin: 1em 0;
+  background-color: var(--bg1); /* Match the code block background */
+  color: var(--fg1); /* Foreground color */
+}
+
+pre.sourceCode {
+  margin: 0;
+}
+
 @media screen {
-div.sourceCode { overflow: auto; }
+  div.sourceCode {
+    overflow: auto;
+  }
 }
+
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+  code.sourceCode {
+    white-space: pre-wrap;
+  }
+  a.sourceLine {
+    text-indent: -1em;
+    padding-left: 1em;
+  }
 }
+
+/* Line numbers and adjustments for indentation */
+pre.numberSource {
+  margin-left: 1.5em;
+  border-left: 1px solid var(--bg2); /* A subtle border */
+  padding-left: 4px;
+  background-color: var(--bg1); /* Darker background */
+  color: var(--fg1); /* Match foreground color */
+}
+
 pre.numberSource a.sourceLine {
-  position: relative; left: -4em; color: #928374;
+  display: inline-block;
+  position: relative;
+  left: 0; /* Adjust positioning to fit the line numbers */
+  color: var(--gray); /* Line number color */
 }
+
 pre.numberSource a.sourceLine::before {
-  content: attr(title);
-  position: relative; left: -1em; text-align: right; vertical-align: baseline;
-  border: none; pointer-events: all; display: inline-block;
-  -webkit-touch-callout: none; -webkit-user-select: none;
-  -khtml-user-select: none; -moz-user-select: none;
-  -ms-user-select: none; user-select: none;
-  padding: 0 4px; width: 4em;
-  color: #928374;
+  content: attr(title); /* Display line number using the title attribute */
+  position: relative;
+  left: -1em;
+  text-align: right;
+  vertical-align: baseline;
+  border: none;
+  pointer-events: all;
+  display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 4px;
+  width: 4em;
+  color: var(--gray); /* Line number color */
 }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #d5c4a1; padding-left: 4px; background-color: #fbf1c7; color: #3c3836; }
 
 /* Syntax highlighting */
-code span.al { color: #cc241d; font-weight: bold; } /* Alert */
-code span.an { color: #689d6a; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #b16286; } /* Attribute */
-code span.bn { color: #d79921; } /* BaseN */
-code span.cf { color: #458588; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #b16286; } /* Char */
-code span.cn { color: #d65d0e; } /* Constant */
-code span.co { color: #928374; font-style: italic; } /* Comment */
-code span.cv { color: #689d6a; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #cc241d; font-style: italic; } /* Documentation */
-code span.dt { color: #b16286; } /* DataType */
-code span.dv { color: #689d6a; } /* DecVal */
-code span.er { color: #cc241d; font-weight: bold; } /* Error */
-code span.fl { color: #689d6a; } /* Float */
-code span.fu { color: #458588; } /* Function */
-code span.in { color: #689d6a; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #458588; font-weight: bold; } /* Keyword */
-code span.op { color: #3c3836; } /* Operator */
-code span.ot { color: #458588; } /* Other */
-code span.pp { color: #d65d0e; } /* Preprocessor */
-code span.sc { color: #b16286; } /* SpecialChar */
-code span.ss { color: #cc241d; } /* SpecialString */
-code span.st { color: #b16286; } /* String */
-code span.va { color: #d79921; } /* Variable */
-code span.vs { color: #b16286; } /* VerbatimString */
-code span.wa { color: #689d6a; font-weight: bold; font-style: italic; } /* Warning */
+code span.al { color: var(--red); font-weight: bold; } /* Alert */
+code span.an { color: var(--green); font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: var(--purple); } /* Attribute */
+code span.bn { color: var(--yellow); } /* BaseN */
+code span.cf { color: var(--blue); font-weight: bold; } /* ControlFlow */
+code span.ch { color: var(--purple); } /* Char */
+code span.cn { color: var(--orange); } /* Constant */
+code span.co { color: var(--gray); font-style: italic; } /* Comment */
+code span.cv { color: var(--green); font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: var(--red); font-style: italic; } /* Documentation */
+code span.dt { color: var(--purple); } /* DataType */
+code span.dv { color: var(--green); } /* DecVal */
+code span.er { color: var(--red); font-weight: bold; } /* Error */
+code span.fl { color: var(--green); } /* Float */
+code span.fu { color: var(--blue); } /* Function */
+code span.in { color: var(--green); font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: var(--blue); font-weight: bold; } /* Keyword */
+code span.op { color: var(--fg1); } /* Operator */
+code span.ot { color: var(--blue); } /* Other */
+code span.pp { color: var(--orange); } /* Preprocessor */
+code span.sc { color: var(--purple); } /* SpecialChar */
+code span.ss { color: var(--red); } /* SpecialString */
+code span.st { color: var(--purple); } /* String */
+code span.va { color: var(--yellow); } /* Variable */
+code span.vs { color: var(--purple); } /* VerbatimString */
+code span.wa { color: var(--green); font-weight: bold; font-style: italic; } /* Warning */

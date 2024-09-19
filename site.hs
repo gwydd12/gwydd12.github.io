@@ -72,7 +72,7 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
+                    constField "title" "Posts"            `mappend`
                     defaultContext
 
             makeItem ""
@@ -115,6 +115,6 @@ feedConfig = FeedConfiguration
 postCtx :: Context String
 postCtx =
     constField "root" root         <>
-    dateField "date" "%Y-%m-%d"    <>
+    dateField "date" "%b %d"    <>
     defaultContext
 

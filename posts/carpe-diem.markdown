@@ -1,5 +1,9 @@
 ---
 title: Carpe Diem
+author: gwydd
+date: 2024-12-12
+keywords: test,new test, newer test
+description: Doing something about nothing about doing something weird
 ---
 
 Fusce tortor quam, egestas in posuere quis, porttitor vel turpis. Donec

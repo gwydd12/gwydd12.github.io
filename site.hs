@@ -53,6 +53,10 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
+    
+    match "robots.txt" $ do
+        route idRoute
+        compile copyFileCompiler
 
     match "posts/*" $ do
         route $ setExtension "html"
@@ -95,6 +99,7 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
             posts <- recentFirst =<< loadAllSnapshots "posts/*" "content"
             let feedCtx = postCtx `mappend` bodyField "description"
             renderAtom feedConfig feedCtx posts
+  
 
     match "templates/*" $ compile templateBodyCompiler
 --------------------------------------------------------------------------------

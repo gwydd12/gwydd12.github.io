@@ -65,6 +65,14 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
+    
+    match "reviews/*" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/review.html"  reviewCtx
+            >>= saveSnapshot "content"
+            >>= loadAndApplyTemplate "templates/default.html" reviewCtx
+            >>= relativizeUrls
 
     create ["archive.html"] $ do
         route idRoute
@@ -78,6 +86,20 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                >>= relativizeUrls
+    
+    create ["reviews.html"] $ do
+        route idRoute
+        compile $ do
+            reviews <- recentFirst =<< loadAll "reviews/*"
+            let reviewsCtx =
+                    listField "reviews" reviewCtx (return reviews) `mappend`
+                    constField "title" "Reviews"            `mappend`
+                    defaultContext
+
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/reviews.html" reviewsCtx
+                >>= loadAndApplyTemplate "templates/default.html" reviewsCtx
                 >>= relativizeUrls
 
     match "index.html" $ do
@@ -117,4 +139,9 @@ postCtx =
     constField "root" root         <>
     dateField "date" "%b %d"    <>
     defaultContext
-
+--------------------------------------------------------------------------------
+reviewCtx :: Context String
+reviewCtx = 
+    constField "root" root <>
+    dateField "date" "%b %d" <>
+    defaultContext

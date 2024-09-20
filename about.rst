@@ -11,5 +11,8 @@ However, I prefer not to limit myself to one specific area, as I enjoy exploring
 I'm also an enthusiast about open source development, free software, and privacy. 
 If you have any questions or cool ideas, I'd love to hear them!
 
+Fun fact: Even though this blog is based on the static website generator hakyll I have no clue how to write any haskell. For me this was 
+an opportunity to just play around a technology that I probably will not use too often (Atleast for now).
+
 *“The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.”*
 ― Albert Camus

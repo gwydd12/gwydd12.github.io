@@ -37,7 +37,7 @@ for their published work that inspired this blog. (Or even developed the underly
 ## License
 
 * Every blogpost underlies [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-* The website itself can be used under the license GPL3.0
+* The website itself can be used under the MIT license
 
 ---
 

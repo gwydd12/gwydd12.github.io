@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="gwydd">
+        <meta name="keywords" content="test,new test, newer test">
+        <meta name="description" content="Doing something about nothing about doing something weird">
+        
+            <meta property="og:type" content="website">
+        
+        <meta name="date" content="Dec 12">
+
+        <title>Gwydd's Blog - Carpe Diem</title>
+        <link rel="stylesheet" href="../css/syntax.css" />
+        <link rel="stylesheet" href="../css/latex.css" />
+        <link rel="stylesheet" href="../css/color.css" />
+        <link rel="stylesheet" href="../css/default.css" />
+    </head>
+    <body>
+        <header style="display: flex; align-items: center; justify-content: center; padding: 10px 20px;">
+            <a href="../" style="margin-right: 20px;">
+                <img src="../images/gwydd-mascott.png" style="max-width: 50px; height: auto;" alt="Mascot">
+            </a>
+            <nav style="display: flex; gap: 20px;">
+                <a href="../archive.html">Posts</a>
+                <a href="../reviews.html">Reviews</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <h1>Carpe Diem</h1>
+            <article>
+    <section class="header">
+        Posted on Dec 12
+        
+            by gwydd
+        
+    </section>
+    <section>
+        <p>Fusce tortor quam, egestas in posuere quis, porttitor vel turpis. Donec
+vulputate porttitor augue at rhoncus. Proin iaculis consectetur sagittis.
+Curabitur venenatis turpis sit amet purus tristique nec posuere risus laoreet.
+Nullam nisi sem, dapibus id semper id, egestas vel arcu. Morbi porttitor ipsum
+placerat erat consequat sed consequat purus feugiat. Donec auctor elit ut risus
+mattis facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Proin vulputate sapien facilisis leo ornare pulvinar. Fusce tempus massa a risus
+semper iaculis. Suspendisse sollicitudin posuere nunc, sit amet rutrum leo
+facilisis mattis. Sed ornare auctor dui, vitae rutrum neque auctor sit amet.
+Proin ac dui magna. Mauris vehicula interdum augue, nec ultrices libero egestas
+quis. Nunc convallis euismod ipsum, id sollicitudin orci consequat ac. Fusce
+bibendum congue libero, in rutrum nulla congue non. Cras sit amet risus tortor,
+eu pellentesque dui. Phasellus euismod enim non nibh sodales quis consectetur
+lorem laoreet. Vivamus a egestas quam. Curabitur in tortor augue, vitae varius
+tellus. Integer varius, elit ac gravida suscipit, eros erat pellentesque nisi,
+et tristique augue odio id nulla. Aliquam sit amet nunc vel tellus hendrerit
+tempus ac vel sem.</p>
+<p>Aenean tincidunt sollicitudin sapien ut porttitor. Curabitur molestie adipiscing
+lorem vel scelerisque. Donec vitae interdum est. Proin rutrum vulputate
+faucibus. Suspendisse sit amet felis odio, non volutpat ante. Sed eu lectus
+quam. Curabitur tristique rhoncus est, vel commodo tortor suscipit semper.
+Maecenas feugiat vestibulum nisi id facilisis. Nulla non tincidunt libero.
+Praesent ultrices interdum commodo. Sed euismod nisl auctor leo ultrices rutrum.
+Aliquam nibh felis, congue molestie blandit at, bibendum at eros. Aenean
+tincidunt, tortor iaculis placerat sollicitudin, lorem justo tempor diam, et
+posuere sapien leo et magna. Quisque vel aliquam mauris.</p>
+<p>Proin varius tempus fermentum. Cum sociis natoque penatibus et magnis dis
+parturient montes, nascetur ridiculus mus. Sed tincidunt nunc id magna
+adipiscing non sollicitudin turpis tempor. Etiam vel elit ipsum, quis euismod
+velit. Quisque elementum magna vitae quam venenatis lacinia. Sed at arcu ipsum.
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+himenaeos. Donec ut lorem ac sapien cursus lacinia sit amet mollis dolor.
+Vivamus tempus odio nec magna faucibus sed hendrerit lorem tempor.</p>
+<p>Vestibulum eu nisi arcu. Curabitur nisi risus, fermentum ut lacinia ut, interdum
+nec magna. Nunc aliquet gravida massa, eu aliquam lorem faucibus at. Sed
+sollicitudin volutpat velit id tempor. In nibh justo, pharetra et pretium
+dignissim, tempus in turpis. Phasellus eget lobortis nisl. Phasellus sed
+fermentum diam. Nam tempus pharetra odio, quis congue eros imperdiet eu. Aliquam
+dui eros, hendrerit et vulputate vel, porta eu eros. Nullam nisi dui, commodo
+eget pharetra ut, ornare sit amet nunc. Fusce vel neque urna. Maecenas nulla
+ante, egestas at consequat quis, fermentum a enim. Aliquam id tristique urna.
+Integer augue justo, scelerisque et consectetur id, rhoncus eget enim.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ot">cleanIndexUrls ::</span> <span class="dt">Item</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Compiler</span> (<span class="dt">Item</span> <span class="dt">String</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cleanIndexUrls <span class="ot">=</span> <span class="fu">return</span> <span class="op">.</span> <span class="fu">fmap</span> (withUrls cleanIndex)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ot">cleanIndexHtmls ::</span> <span class="dt">Item</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Compiler</span> (<span class="dt">Item</span> <span class="dt">String</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>cleanIndexHtmls <span class="ot">=</span> <span class="fu">return</span> <span class="op">.</span> <span class="fu">fmap</span> (replaceAll <span class="kw">pattern</span> replacement)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">where</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">pattern</span> <span class="ot">=</span> <span class="st">&quot;/index.html&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      replacement <span class="ot">=</span> <span class="fu">const</span> <span class="st">&quot;/&quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ot">cleanIndex ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">String</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>cleanIndex url</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> idx <span class="ot">`isSuffixOf`</span> url <span class="ot">=</span> <span class="fu">take</span> (<span class="fu">length</span> url <span class="op">-</span> <span class="fu">length</span> idx) url</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="fu">otherwise</span>            <span class="ot">=</span> url</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">where</span> idx <span class="ot">=</span> <span class="st">&quot;index.html&quot;</span></span></code></pre></div>
+    </section>
+</article>
+
+        </main>
+        
+        <footer>
+            <div id="footer">
+                <a id="to-top" href="#">Back to the top</a>
+                &nbsp;|&nbsp;
+                <a href="../atom.xml" style="font-variant:small-caps">RSS</a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/gwydd12/gwydd.se">Website source</a>
+                &nbsp;|&nbsp;
+                <a href="../contact.html">Contact</a>
+            </div>
+        </footer>
+    </body>
+</html>

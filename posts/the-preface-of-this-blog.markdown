@@ -14,7 +14,7 @@ I'm writing this as the first blog post to be published on this website.
 It gives me a starting point for this project, which I've had in mind for a couple of years.
 
 This blog allows me to think deeply about my research, projects, ideas and much more, and to share them with the whole internet. 
-The latter part makes excites me, as I can share my research with the whole internet and it might even help someone.
+The latter part excites me, as I can share my research with the whole internet and it might even help someone.
 
 This blog will be a collection of several research interests that I am pursuing.
 At the time of writing, this blog does not have a specific focus, but it will mostly be in the world of computer science.

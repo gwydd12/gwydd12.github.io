@@ -1,18 +1,22 @@
 ---
 title: About
 ---
-I'm a computer science student. 
-Although my studies keep me busy most of the time, I try to explore different aspects of computer science independently. 
-When I'm not focused on university work, I dive into the world of cyber security, either writing new exploits 
-(though I usually don't find the vulnerabilities myself—probably a skill issue) 
-or playing CTFs. Outside of cyber security, I tinker with whatever interests me, often in the realm of privacy-focused projects. 
-However, I prefer not to limit myself to one specific area, as I enjoy exploring various topics.
 
-I'm also an enthusiast about open source development, free software, and privacy. 
-If you have any questions or cool ideas, I'd love to hear them!
+Hello, I'm gwydd!
 
-Fun fact: Even though this blog is based on the static website generator hakyll I have no clue how to write any haskell. For me this was 
-an opportunity to just play around a technology that I probably will not use too often (Atleast for now).
+I'm a computer science student, currently focused on software development and programming languages. 
+Although my studies keep me quite busy, I still find time to tinker with Linux, BSD, and privacy-focused projects during my free time. 
+I'm a passionate enthusiast of open-source development, free software, and internet privacy.
 
-*“The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.”*
-― Albert Camus
+Aside from my technical pursuits, I also enjoy reading. 
+At the moment, I'm reading "The Nausea" by Jean-Paul Sartre, exploring existentialism.
+
+If you're wondering about the meaning behind "gwydd"—it's the Welsh word for "goose." 
+I don't have any Welsh heritage (at least, none that I'm aware of), but I found the word amusing, and it stuck as my username.
+
+A fun fact about this blog: it's built using the static site generator Hakyll. 
+Even though I have no prior experience with Haskell (the language Hakyll is written in), however, 
+I took it as a chance to experiment with a new technology. This aligns with the whole motto of this blog:
+to explore and tinker around.
+
+And yes, as you can tell by the design of this site my designer skills and my taste is not particularly good.

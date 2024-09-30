@@ -35,7 +35,7 @@ import Hakyll
       Context )
 
 root :: String
-root = "https://gwydd.se"
+root = "https://gwydd.ch"
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
@@ -130,7 +130,7 @@ feedConfig = FeedConfiguration
     { feedTitle       = "Gwydd's Blog"
     , feedDescription = "Latest posts from Gwydd's blog"
     , feedAuthorName  = "Gwydd"
-    , feedAuthorEmail = "me@gwydd.se"
+    , feedAuthorEmail = "me@gwydd.ch"
     , feedRoot        = root
     }
 --------------------------------------------------------------------------------   

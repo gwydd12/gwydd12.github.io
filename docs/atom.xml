@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Gwydd's Blog</title>
+    <link href="https://gwydd.se/atom.xml" rel="self" />
+    <link href="https://gwydd.se" />
+    <id>https://gwydd.se/atom.xml</id>
+    <author>
+        <name>Gwydd</name>
+        
+        <email>me@gwydd.se</email>
+        
+    </author>
+    <updated>2024-09-30T00:00:00Z</updated>
+    <entry>
+    <title>The preface of this blog</title>
+    <link href="https://gwydd.se/posts/the-preface-of-this-blog.html" />
+    <id>https://gwydd.se/posts/the-preface-of-this-blog.html</id>
+    <published>2024-09-30T00:00:00Z</published>
+    <updated>2024-09-30T00:00:00Z</updated>
+    <summary type="html"><![CDATA[The preface of this blog.]]></summary>
+</entry>
+
+</feed>

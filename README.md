@@ -14,10 +14,10 @@
 
 ```bash
 # Clone this repository
-$ git clone git@github.com:gwydd12/gwydd.ch.git
+$ git clone git@github.com:gwydd12/gwydd12.github.io.git
 
 # Go into the repository
-$ cd gwydd.ch
+$ cd gwydd12.github.io
 
 # Build the site
 $ site build

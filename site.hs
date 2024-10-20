@@ -58,56 +58,57 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
         route idRoute
         compile copyFileCompiler
 
-    match "posts/*" $ do
+    match "articles/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/article.html"    articleCtx
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= loadAndApplyTemplate "templates/default.html" articleCtx
             >>= relativizeUrls
     
-    match "reviews/*" $ do
+    match "notes/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/review.html"  reviewCtx
+            >>= loadAndApplyTemplate "templates/note.html"  noteCtx
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/default.html" reviewCtx
+            >>= loadAndApplyTemplate "templates/default.html" noteCtx
             >>= relativizeUrls
 
-    create ["archive.html"] $ do
+    create ["articles.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Posts"            `mappend`
+            articles <- recentFirst =<< loadAll "articles/*"
+            let articlesCtx =
+                    listField "articles" articleCtx (return articles) `mappend`
+                    constField "title" "Articles"            `mappend`
                     defaultContext
 
             makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/articles.html" articlesCtx
+                >>= loadAndApplyTemplate "templates/default.html" articlesCtx
                 >>= relativizeUrls
     
-    create ["reviews.html"] $ do
+    create ["notes.html"] $ do
         route idRoute
         compile $ do
-            reviews <- recentFirst =<< loadAll "reviews/*"
-            let reviewsCtx =
-                    listField "reviews" reviewCtx (return reviews) `mappend`
-                    constField "title" "Reviews"            `mappend`
+            notes <- recentFirst =<< loadAll "notes/*"
+            let notesCtx =
+                    listField "notes" noteCtx (return notes) `mappend`
+                    constField "title" "Notes"            `mappend`
                     defaultContext
 
             makeItem ""
-                >>= loadAndApplyTemplate "templates/reviews.html" reviewsCtx
-                >>= loadAndApplyTemplate "templates/default.html" reviewsCtx
+                >>= loadAndApplyTemplate "templates/notes.html" notesCtx
+                >>= loadAndApplyTemplate "templates/default.html" notesCtx
                 >>= relativizeUrls
+
 
     match "index.html" $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            articles <- recentFirst =<< loadAll "articles/*"
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
+                    listField "articles" articleCtx (return articles) `mappend`
                     defaultContext
 
             getResourceBody
@@ -118,9 +119,9 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
     create ["atom.xml"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAllSnapshots "posts/*" "content"
-            let feedCtx = postCtx `mappend` bodyField "description"
-            renderAtom feedConfig feedCtx posts
+            articles <- recentFirst =<< loadAllSnapshots "articles/*" "content"
+            let feedCtx = articleCtx `mappend` bodyField "description"
+            renderAtom feedConfig feedCtx articles
   
 
     match "templates/*" $ compile templateBodyCompiler
@@ -128,20 +129,20 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
 feedConfig :: FeedConfiguration
 feedConfig = FeedConfiguration
     { feedTitle       = "Gwydd's Blog"
-    , feedDescription = "Latest posts from Gwydd's blog"
+    , feedDescription = "Latest articles from Gwydd's blog"
     , feedAuthorName  = "Gwydd"
     , feedAuthorEmail = "me@gwydd.ch"
     , feedRoot        = root
     }
 --------------------------------------------------------------------------------   
-postCtx :: Context String
-postCtx =
-    constField "root" root         <>
+articleCtx :: Context String
+articleCtx =
+    constField "root" root      <>
     dateField "date" "%b %d"    <>
     defaultContext
 --------------------------------------------------------------------------------
-reviewCtx :: Context String
-reviewCtx = 
-    constField "root" root <>
-    dateField "date" "%b %d" <>
+noteCtx :: Context String
+noteCtx =
+    constField "root" root      <>
+    dateField "date" "%b %d"    <>
     defaultContext

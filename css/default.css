@@ -56,9 +56,9 @@ article .header {
 
 @media (max-width: 319px) {
   body {
-    width: 95%;
+    width: 60rem;
     margin: 0;
-    padding: 0 2.5%;
+    padding: 0 5rem;
   }
   header {
     margin: 4.2rem 0;
@@ -87,9 +87,9 @@ article .header {
 
 @media (min-width: 320px) {
   body {
-    width: 95%;
+    width: 60rem;
     margin: 0;
-    padding: 0 2.5%;
+    padding: 0 5%;
   }
   header {
     margin: 4.2rem 0;
@@ -118,7 +118,7 @@ article .header {
 
 @media (min-width: 640px) {
   body {
-    width: 80rem; /* Increased width */
+    width: 60rem;
     margin: 0 auto;
     padding: 0;
   }
@@ -151,7 +151,7 @@ article .header {
 
 @media (min-width: 1024px) {
   body {
-    width: 100rem; /* Further increased width for larger screens */
+    width: 60rem;
     margin: 0 auto;
     padding: 0;
   }

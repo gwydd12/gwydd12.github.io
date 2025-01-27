@@ -1,44 +1,29 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
-import Hakyll
-    ( getResourceBody,
-      makeItem,
-      saveSnapshot,
-      loadAll,
-      loadAllSnapshots,
-      defaultConfiguration,
-      copyFileCompiler,
-      fromList,
-      idRoute,
-      setExtension,
-      compile,
-      create,
-      match,
-      route,
-      hakyllWith,
-      compressCssCompiler,
-      renderAtom,
-      relativizeUrls,
-      pandocCompiler,
-      bodyField,
-      constField,
-      dateField,
-      defaultContext,
-      listField,
-      applyAsTemplate,
-      loadAndApplyTemplate,
-      templateBodyCompiler,
-      recentFirst,
-      Configuration(destinationDirectory),
-      FeedConfiguration(..),
-      Context )
+import           Hakyll
+import           Text.Pandoc.Options
+import           Text.Pandoc.Highlighting (zenburn, styleToCss)
+
 
 root :: String
 root = "https://gwydd.ch"
+
+pandocMathCompiler =
+    let mathExtensions    = extensionsFromList [Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros]
+        defaultExtensions = writerExtensions defaultHakyllWriterOptions
+        newExtensions     = defaultExtensions <> mathExtensions
+        writerOptions     = defaultHakyllWriterOptions {
+                              writerExtensions = newExtensions,
+                              writerHTMLMathMethod = MathJax ""
+                            }
+    in pandocCompilerWith defaultHakyllReaderOptions writerOptions
+
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
+    
+    match "templates/*" $ compile templateBodyCompiler
 
     match "images/*" $ do
         route   idRoute
@@ -48,9 +33,9 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.rst", "contact.markdown"]) $ do
+    match (fromList ["about.md"]) $ do
         route   $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
     
@@ -60,7 +45,7 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
 
     match "articles/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/article.html"    articleCtx
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" articleCtx
@@ -68,11 +53,15 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
     
     match "notes/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/note.html"  noteCtx
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" noteCtx
             >>= relativizeUrls
+
+    create ["css/syntax.css"] $ do
+        route idRoute
+        compile $ makeItem $ styleToCss zenburn
 
     create ["articles.html"] $ do
         route idRoute
@@ -124,7 +113,6 @@ main = hakyllWith defaultConfiguration {destinationDirectory = "docs"} $ do
             renderAtom feedConfig feedCtx articles
   
 
-    match "templates/*" $ compile templateBodyCompiler
 --------------------------------------------------------------------------------
 feedConfig :: FeedConfiguration
 feedConfig = FeedConfiguration
@@ -146,3 +134,4 @@ noteCtx =
     constField "root" root      <>
     dateField "date" "%b %d"    <>
     defaultContext
+--------------------------------------------------------------------------------
